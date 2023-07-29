@@ -1,0 +1,229 @@
+@import './config';
+
+// resets 
+*{
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    box-sizing: border-box;
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+.header-main-menu {
+    text-align: left !important;
+    margin-top: 0.5em;
+    a {
+        color: white;
+        margin-right: 1em;
+        text-decoration: none;
+        &:hover {
+            color: #9f209b;
+        }
+    }
+} 
+
+
+h1{
+    margin-top: 1em;
+    color: white;
+}
+
+
+input {
+    font-family: 'roboto', cursive;
+}
+
+
+
+body{
+    @include background-gradient;
+}
+
+
+ul{
+    list-style: none;
+}
+
+
+
+
+
+
+.main{
+    background: $background-color;
+    color: white;
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    &-header{
+        border-radius: 10px 10px 0 0;
+        @include item-padding;
+        background-color: $header-background;
+        font-size: 20px;
+        color: rgb(175, 202, 255);
+
+        &-text{
+            text-align: center;
+        }
+
+        &-icon{
+            text-align: right;
+
+            &:hover{
+                transform: scale(1.1);
+                transform-origin: center;
+            }
+        }
+
+    }
+
+
+    &-btn{
+        display: block;
+        button {
+            width: 100%;
+            height: 35px;
+            background-color: $button-color;
+            border: none;
+            color: white;
+            font-weight: 400;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background: $button-hover;
+        }
+
+    }
+
+    // input
+
+    &-input{
+        &-task{
+            width:100%;
+            border:none;
+            height: 35px;
+            border-radius: 5px;
+            padding: 0 10px;
+            margin: 3px 0;
+        }
+
+        &-submit{
+            @extend .main-input-task;
+            background-color: $button-color2;
+            border: none;
+            color: white;
+            font-weight: 400;
+            border-radius: 5px;
+            margin: 0;
+
+            &:hover{
+                background: $button-color2-hover;
+            }
+        }
+    }
+
+
+
+    // Main 
+    &-menu {
+        text-align: center;
+
+
+        ul li{
+            display: grid;
+            grid-template-columns: 18% 72% 10%;
+            align-items: center;
+            padding: 0 7px;
+            min-height: 35px;
+            background: rgb(86, 41, 93);
+            border-bottom: 1px solid rgb(20, 20, 20);
+            border-radius: 5px;
+            text-transform: capitalize;
+            font-family: 'roboto';
+            position: relative;
+            a {
+                text-decoration: none;
+                color: white;
+                position: absolute;
+                top:6px;
+
+                &:hover{
+                    color: red;
+                    top:-6px;
+                    font-size: 30px;
+                }
+            }
+        }
+
+        ul li:hover{
+            background: rgb(39, 13, 43);
+        }
+
+
+        .main-menu-remove{
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        ul li:hover .main-menu-remove{
+            opacity: 1;
+        }
+
+
+        // time
+        &-time{
+            font-size: 10px;
+            padding: 4px 0;
+            background: $button-color;
+            border-radius: 5px;
+            text-transform: lowercase;
+        }
+    }
+
+    // me
+    &-me {
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            &:hover{
+                color:#a81799
+                
+            }
+        }
+    }
+
+}
+
+
+
+
+// Time
+.time {
+    h1 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: white;
+    &-con{
+        font-size: 40px;
+    }
+          
+    }
+}
+
+
+// Register page
+.reg-form {
+    input {
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,20 @@
+$background-color: #1E1E1E;
+$cal-background-color: rgb(19, 11, 11);
+$header-background: rgb(5, 10, 39);
+
+$button-color: #b467b4;
+$button-color2: #F72585;
+$button-color2-hover: #7209B7;
+$button-hover: #7ca4d0;
+
+@mixin item-padding(){
+    padding: 10px 20px;
+}
+
+@mixin background-gradient() {
+    background: rgb(0,189,200);
+    background: -moz-linear-gradient(90deg, rgba(0,189,200,1) 0%, rgba(191,0,146,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,189,200,1) 0%, rgba(191,0,146,1) 100%);
+    background: linear-gradient(90deg, rgba(0,189,200,1) 0%, rgba(191,0,146,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00bdc8",endColorstr="#bf0092",GradientType=1); 
+}
