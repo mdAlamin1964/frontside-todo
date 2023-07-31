@@ -92,7 +92,7 @@ function App() {
           <div className="main-menu-time">{n.time}</div>
           {n.text}
           <span>
-            <a href={"/delete-data/" + n.taskId}>🗑</a>
+            <a href={backend_url+"/delete-data/" + n.taskId}>🗑</a>
           </span>
         </li>
       )
@@ -100,26 +100,18 @@ function App() {
   }
   
 
-  console.log("Dtask",dtask)
-
-
-
-
-
-
-
   // test
   const[data, setData] = React.useState("")
   React.useEffect(()=> {
     const datafetch = async() => {
       const data = await (
-        await fetch(backend_url+'/home')
+        await fetch(backend_url)
       ).json()
       setData(data)
     }
     datafetch()
   },[])
-
+  
   return (
     <>
       <div className="container">
@@ -128,8 +120,8 @@ function App() {
         { dtask? 
           <div className="header-main-menu"> 
             <Link to="/">Home</Link>
-            <Link to="/logout">logout</Link>
-            <Link to={"/delete-accout/" + dtask.id}>Delete Acc</Link>
+            <a href={backend_url+"/logout"}>logout</a>
+            <a href={backend_url+"/delete-accout/" + dtask.id}>Delete Acc</a>
             <h1 className="text-center" >Welcom {dtask.name}</h1>
           </ div>
            :
@@ -152,16 +144,22 @@ function App() {
                 backend_url={backend_url}
 
               /> :
-
-              <Login 
-                backend_url={backend_url}
-              />
+              <>
+                <Login 
+                  backend_url={backend_url}
+                />
+                <p className='condition-link' ><Link to="/register">Register</Link> an Account instead?</p>
+              </>
               
               }/>
             <Route path="/register" element={
+              <>
               <Register 
                 backend_url={backend_url}
-              />}/>
+              />
+              <p className='condition-link' >Already have an accout? <Link to="/">Login</Link></p>
+              </>
+              }/>
             <Route path="/login" element={
               <Login 
                 backend_url={backend_url}

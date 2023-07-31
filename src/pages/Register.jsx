@@ -14,7 +14,6 @@ export default function Register({backend_url}) {
                     <input type="text" name="con-password" autoFocus autoComplete="off" placeholder="Confirm password" className="form-control-sm d-block w-25" />
                     <input type="submit" value="Submit" className="btn d-block btn-primary" />
                 </form>
-
             </div>
         </>
     )
