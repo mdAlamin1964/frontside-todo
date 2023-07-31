@@ -35,12 +35,12 @@ time_now = {
 
 def set_time():
     time = datetime.now()
-    time_now['hour'] = time.hour
+    time_now['hour'] = time.hour + 6
     time_now['minute'] = time.minute
     time_now['second'] = time.second
     time_now['formate'] = "AM"
-    if time.hour > 12:
-        time_now['hour'] = time.hour - 12
+    if time_now['hour'] > 12:
+        time_now['hour'] = time_now['hour'] - 12
         time_now['formate'] = "PM"
 
 
@@ -67,9 +67,6 @@ def build_actual_response(response):
 @app.route('/')
 def hello_world():
     return render_template('index.html')
-    # return build_actual_response(jsonify({
-    #         'text': "Hello Alamin"
-    #     }))
 
 
 
@@ -262,9 +259,4 @@ def validate_string(s):
     else:
         return s
 
-
-
-
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port="5000" ,debug=True)
 
