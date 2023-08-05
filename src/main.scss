@@ -185,7 +185,7 @@ ul{
     // me
     &-me {
         position: absolute;
-        bottom: 1em;
+        bottom: 0em;
         left: 50%;
         transform: translate(-50%, -50%);
         a {
@@ -201,6 +201,14 @@ ul{
 
 }
 
+
+
+@media screen and (max-width: 460px) {
+    .main-me {
+        position: relative;
+        margin-top: 30vh;
+    }
+}
 
 
 

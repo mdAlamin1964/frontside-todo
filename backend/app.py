@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask, session, request, url_for, redirect, jsonify, make_response, render_template
 from flask_sqlalchemy import SQLAlchemy
+import re
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
@@ -251,12 +252,21 @@ def erorr():
 
 
 # validating empty string
+# def validate_string(s):
+#     if len(s) < 1 or s == " ":
+#         return None
+#     elif s == " " * len(s):
+#         return None
+#     else:
+#         return s
+
+
+# validating empty string
 def validate_string(s):
-    if len(s) < 1 or s == " ":
-        return None
+    if re.search(r"^[a-zA-Z0-9 ]*$", s):
+        return s
     elif s == " " * len(s):
         return None
+
     else:
-        return s
-
-
+        return None

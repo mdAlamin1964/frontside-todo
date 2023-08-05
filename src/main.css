@@ -143,7 +143,7 @@ ul {
 }
 .main-me {
   position: absolute;
-  bottom: 1em;
+  bottom: 0em;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -156,6 +156,12 @@ ul {
   color: #a81799;
 }
 
+@media screen and (max-width: 460px) {
+  .main-me {
+    position: relative;
+    margin-top: 30vh;
+  }
+}
 .time h1 {
   text-align: center;
   margin-top: 5%;
